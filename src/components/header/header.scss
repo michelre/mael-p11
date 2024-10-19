@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    img {
+        height: 68px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+
+        li:first-child {
+            margin-right: 50px;
+        }
+    }
+}

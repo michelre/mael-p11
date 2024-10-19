@@ -1,0 +1,28 @@
+.home-banner {
+    margin-top: 50px;
+}
+
+.locations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;    
+    margin-top: 43px;
+}
+
+@media screen and (min-width: 769px) {
+    .locations {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 56px 50px;
+        background: #F6F6F6;
+        border-radius: 25px;        
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .locations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
