@@ -5,8 +5,8 @@ const Host = ({host}) => {
 
   return (
     <div className='host'>
-      <img src={picture} alt={`${name}'s profile`} className="profile-picture" />
       <p className='host-name'>{name}</p>
+      <img src={picture} alt={`${name}'s profile`} className="profile-picture" />
     </div>
   );
 };
