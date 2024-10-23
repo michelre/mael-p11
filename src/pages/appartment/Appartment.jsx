@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './appartment.scss';
 import Rating from "../../components/rating/Rating";
+import Tag from "../../components/tag/Tag";
+import Host from "../../components/host/Host";
 
 const Appartment = () => {
     const params = useParams()
@@ -16,14 +19,23 @@ const Appartment = () => {
     }, [])
 
     if(!appartment){
-        return 
+        return
     }
 
     return <>
-        <h1>Appartment {appartment.title}</h1>
-        <Rating 
+        <h1 className="title">{appartment.title}</h1>
+        <p>{appartment.location}</p>
+        <Host
+          host={{ name: appartment.host.name, picture: appartment.host.picture }}
+        />
+        <Rating
             rating={appartment.rating}
         />
+        <div className="tag">
+            {appartment.tags && appartment.tags.map((tag, index) => (
+                <Tag key={index} tag={tag} />
+            ))}
+        </div>
     </>
 }
 
