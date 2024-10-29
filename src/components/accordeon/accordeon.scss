@@ -1,0 +1,48 @@
+.accordeon {
+    .title {
+        color: white;
+        background: #FF6060;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        width: 582px;
+        height: 52px;
+        margin-bottom: 50px;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+
+
+        img {
+            transform: rotate(-180deg);
+            transition: transform .250s linear;
+        }
+    }
+
+    .accordeon-content {
+        transition: height .250s ease-in-out;
+        overflow: hidden;
+        background: #F6F6F673;
+        border-radius: 5px;
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    .accordeon-children {
+        padding: 16px 20px;
+    }
+
+    &.open {
+
+        button img {
+            transform: rotate(0deg);
+        }
+    }
+}

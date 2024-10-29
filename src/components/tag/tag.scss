@@ -1,6 +1,4 @@
-.tags {
-  width: 115px;
-  height: 35px;
+.tag {
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -8,4 +6,8 @@
   display: inline-block;
   margin: 10px;
   padding: 5px 5px;
+
+  p {
+    margin: 0;
+  }
 }

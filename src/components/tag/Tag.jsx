@@ -1,8 +1,7 @@
 import './tag.scss'
 
 const Tag = ({tag}) => {
-    console.log('Tags received:', tag);
-    return <div className='tags'>
+    return <div className='tag'>
         <p>{tag}</p>
     </div>
 };
