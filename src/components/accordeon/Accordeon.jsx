@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './accordeon.scss'
 import ArrowDown from '../../assets/arrow-down.svg'
 import { useRef, useState } from 'react'
@@ -32,5 +33,11 @@ const Accordeon = ({title, children}) => {
         </div>
     </div>
 }
+
+Accordeon.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.element
+}
+
 
 export default Accordeon

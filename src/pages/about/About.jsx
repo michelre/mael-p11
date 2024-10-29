@@ -2,6 +2,7 @@
 import Accordeon from "../../components/accordeon/Accordeon";
 import Banner from "../../components/banner/Banner";
 import './about.scss'
+import KasaAbout from '../../assets/kasa-about.png';
 
 
 const About = () => {
@@ -9,7 +10,10 @@ const About = () => {
     return <>
         <div>
             <div className="home-banner">
-                <Banner/>
+                <Banner
+                    picture={KasaAbout}
+                    content={''}
+                />
             </div> 
             <div className="about-accordeons">
                 <Accordeon title="Fiabilité">

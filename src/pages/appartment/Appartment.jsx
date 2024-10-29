@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import './appartment.scss';
 import Rating from "../../components/rating/Rating";
 import Tag from "../../components/tag/Tag";
@@ -8,21 +7,8 @@ import Slider from "../../components/slider/Slider";
 import Accordeon from "../../components/accordeon/Accordeon";
 
 const Appartment = () => {
-    const params = useParams()
-    const [appartment, setAppartment] = useState(null)
-    const navigate = useNavigate()
+    const appartment = useLoaderData()
 
-    useEffect(() => {
-        fetch('/data.json')
-        .then(resp => resp.json())
-        .then(data => {
-            const a = data.find(d => d.id === params.id)
-            if(!a){
-                navigate('/error')
-            }
-            setAppartment(a)
-        })
-    }, [])
 
     if(!appartment){
         return
@@ -34,21 +20,29 @@ const Appartment = () => {
             pictures={appartment.pictures}
         />
 
-        <h1 className="title">{appartment.title}</h1>
-        <p>{appartment.location}</p>
-        <Host
-          host={{ name: appartment.host.name, picture: appartment.host.picture }}
-        />
-          <div className='rating'>
-            <Rating
-              rating={appartment.rating}
-            />
-          </div>
-        <div className="tags">
-            {appartment.tags && appartment.tags.map((tag, index) => (
-                <Tag key={index} tag={tag} />
-            ))}
+        <div className="appartment-details">
+            <div className="left">
+                <h1 className="title">{appartment.title}</h1>
+                <p>{appartment.location}</p>
+
+                <div className="tags">
+                    {appartment.tags && appartment.tags.map((tag, index) => (
+                        <Tag key={index} tag={tag} />
+                    ))}
+                </div>
+            </div>
+            <div className="right">
+                <Host
+                host={{ name: appartment.host.name, picture: appartment.host.picture }}
+                />
+                <div className='rating'>
+                    <Rating
+                    rating={appartment.rating}
+                    />
+                </div>
+            </div>
         </div>
+        
         <div className="accordeons">
             <Accordeon
                 title="Description"

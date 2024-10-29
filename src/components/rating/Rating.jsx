@@ -1,4 +1,5 @@
 import './rating.scss'
+import PropTypes from 'prop-types';
 import StarActive from "../../assets/star-active.svg"
 import StarInactive from "../../assets/star-inactive.svg"
 
@@ -10,6 +11,10 @@ const Rating = ({rating}) => {
             return <img key={`star-inactive-${idx}`} src={StarInactive} alt={`star-inactive`}/>
         } )}
     </>
+}
+
+Rating.propTypes = {
+    rating: PropTypes.string,
 }
 
 export default Rating;

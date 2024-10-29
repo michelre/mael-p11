@@ -5,10 +5,12 @@
         padding: 10px 15px;
         display: flex;
         justify-content: space-between;
-        border-radius: 5px;
-        width: 582px;
-        height: 52px;
-        margin-bottom: 50px;
+        border-radius: 10px;  
+        align-items: center; 
+        
+        h3 {
+            margin: 0;
+        }
     }
 
     button {
@@ -16,8 +18,7 @@
         border: none;
 
 
-        img {
-            transform: rotate(-180deg);
+        img {            
             transition: transform .250s linear;
         }
     }
@@ -42,7 +43,7 @@
     &.open {
 
         button img {
-            transform: rotate(0deg);
+            transform: rotate(-180deg);
         }
     }
 }

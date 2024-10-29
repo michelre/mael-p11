@@ -3,6 +3,7 @@ import './home.scss';
 import { useEffect, useState } from "react";
 import Thumbnail from "../../components/thumbnail/Thumbnail";
 import { Link } from "react-router-dom";
+import KasaHome from '../../assets/kasa-home.png'
 
 
 const Home = () => {
@@ -21,7 +22,10 @@ const Home = () => {
     return <>
         <div>
             <div className="home-banner">
-                <Banner/>
+                <Banner
+                    picture={KasaHome}
+                    content={'Chez vous, partout et ailleurs'}
+                />
             </div>
             <ul className="locations">
                 {locations.map(location => <li key={location.id}>

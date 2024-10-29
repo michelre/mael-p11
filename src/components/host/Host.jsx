@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './host.scss'
 
 const Host = ({host}) => {
@@ -10,5 +11,9 @@ const Host = ({host}) => {
     </div>
   );
 };
+
+Host.propTypes = {
+  host: PropTypes.object
+}
 
 export default Host;

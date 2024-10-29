@@ -1,4 +1,5 @@
 import './slider.scss'
+import PropTypes from 'prop-types';
 import ArrowRight from '../../assets/arrow-right.svg'
 import ArrowLeft from '../../assets/arrow-left.svg'
 import { useState } from 'react'
@@ -45,6 +46,10 @@ const Slider = ({pictures}) => {
             </> : ""}
         
     </div>
+}
+
+Slider.propTypes = {
+    pictures: PropTypes.array,
 }
 
 export default Slider;

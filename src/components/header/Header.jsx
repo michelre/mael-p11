@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import LogoKasa from '../../assets/logo-kasa.svg'
 import './header.scss'
 
@@ -10,10 +10,10 @@ const Header = () => {
             </Link>            
             <ul>
                 <li>
-                    <Link to='/'>Accueil</Link>
+                    <NavLink to='/'>Accueil</NavLink>
                 </li>
                 <li>
-                    <Link to='about'>A propos</Link>
+                    <NavLink to='about'>A propos</NavLink>
                 </li>
             </ul>
     </header>
